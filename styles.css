@@ -7,15 +7,6 @@ ul{
     list-style-type: none;
 }
 
-.column1{
-    position: relative;
-    float: left;
-    border: 3px solid black;
-    width: 20%;
-    height: 1000px;
-    padding: 5px;
-    margin: 10px;
-}
 .players{
     position: absolute;
     width: 100%;
@@ -41,18 +32,29 @@ input[type="text"] {
 }
 
 #canvas {
-    float: left;
+    position: absolute;
+    left : 0;
+    top: 0;
     border: 3px solid black;
-    padding: 5px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
     background-color: white;  
 } 
-.column3{
-    position: relative;
+.column2{
+    position: absolute;
     float: left;
     border: 3px solid black;
-    width: 15%;
+    width: 20%;
     height: 1000px;
+    padding: 5px;
+    margin: 10px;
+}
+.column3{
+    position: relative;
+    float: right;
+    border: 3px solid black;
+    width: 15%;
+    height: auto;
     padding: 5px;
     margin: 10px;
 }
