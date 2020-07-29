@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
  
 
     //resizing
-    canvas.height = window.innerHeight/100*99;
+    canvas.height = window.innerHeight/100*98;
     canvas.width = window.innerWidth/100*99;
 
 
@@ -41,6 +41,9 @@ window.addEventListener("load", () => {
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(e.clientX, e.clientY);
+    }
+    function change(cursorType){
+        cursor = cursorType;
     }
     //Eventlisteners
     bttn1.addEventListener('click', () => ctx.strokeStyle ="black")
