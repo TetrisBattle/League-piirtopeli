@@ -1,7 +1,6 @@
 window.addEventListener("load", () => {
     const canvas = document.querySelector("#canvas");
     const ctx = canvas.getContext("2d");
- 
 
     //resizing
     canvas.height = window.innerHeight/100*99;
@@ -23,6 +22,8 @@ window.addEventListener("load", () => {
     let bttn11 = document.querySelector("#button11");
     let bttn12 = document.querySelector("#button12");
     let x = 10;
+    let Cursori = "round"
+    ctx.lineCap = Cursori;
 
     function startPosition(e){
         painting = true;
@@ -35,7 +36,6 @@ window.addEventListener("load", () => {
     function draw(e){
         if(!painting) return;
         ctx.lineWidth = x;
-        ctx.lineCap = "round";
 
         ctx.lineTo(e.clientX, e.clientY);
         ctx.stroke();
@@ -44,14 +44,23 @@ window.addEventListener("load", () => {
     }
     //Eventlisteners
     bttn1.addEventListener('click', () => ctx.strokeStyle ="black")
+    bttn1.addEventListener('click', () => ctx.lineCap ="round")
     bttn2.addEventListener('click', () => ctx.strokeStyle ="red")
+    bttn2.addEventListener('click', () => ctx.lineCap ="round")
     bttn3.addEventListener('click', () => ctx.strokeStyle ="green")
+    bttn3.addEventListener('click', () => ctx.lineCap ="round")
     bttn4.addEventListener('click', () => ctx.strokeStyle ="blue")
+    bttn4.addEventListener('click', () => ctx.lineCap ="round")
     bttn5.addEventListener('click', () => ctx.strokeStyle ="purple")
+    bttn5.addEventListener('click', () => ctx.lineCap ="round")
     bttn6.addEventListener('click', () => ctx.strokeStyle ="yellow")
+    bttn6.addEventListener('click', () => ctx.lineCap ="round")
     bttn7.addEventListener('click', () => ctx.strokeStyle ="orange")
+    bttn7.addEventListener('click', () => ctx.lineCap ="round")
     bttn8.addEventListener('click', () => ctx.strokeStyle ="pink")
+    bttn8.addEventListener('click', () => ctx.lineCap ="round")
     bttn9.addEventListener('click', () => ctx.strokeStyle ="white")
+    bttn9.addEventListener('click', () => ctx.lineCap ="square")
     bttn9.addEventListener('click', () => x = 30)
     bttn10.addEventListener('click', () => x = 5)
     bttn11.addEventListener('click', () => x = 10)
