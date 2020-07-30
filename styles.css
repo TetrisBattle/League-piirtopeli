@@ -5,7 +5,14 @@
 
 ul{
     list-style-type: none;
-    padding: 0;
+    padding: 3px;
+    border-radius: 12px;
+    background:#fff;
+}
+li{
+    background:#ccc;
+    border-radius: 12px;
+    border:1px solid #fff;
 }
 
 .left{
@@ -16,14 +23,17 @@ ul{
     width: 20%;
     padding: 5px;
     margin: 10px;
+    border-radius: 12px;
+
 }
 .players{
     float: top;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    padding: 2px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+
 }
 #chat{
     float: top;
@@ -31,9 +41,32 @@ ul{
     bottom: 0;
     left: 0;
     padding: 2px;
+    align-items: flex-start;
+    background: rgb(211, 211, 211);
 }
-
-
+.chatlogs{
+    padding: 5px;
+    width: 100%;
+    height: 450px;
+    background: rgb(211, 211, 211);
+    margin-top: 10px;
+    overflow-x: hidden;
+    overflow-y:scroll;
+}
+#chat .chat-message{
+    width: 80%;
+    padding: 5px;
+    margin: 5px 10px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    background:rgb(194, 194, 194);
+}
+.text{
+    background: rgb(194, 194, 194);
+    padding-top: 0px;
+    font-size: 14px;
+    border-radius: 10px;
+}
 #canvas {
     position: absolute;
     left: 0;
@@ -49,6 +82,8 @@ ul{
     height: auto;
     padding: 5px;
     margin: 10px;
+    border-radius: 12px;
+    background: gray;
 }
 .tools{
     position: absolute;
@@ -63,12 +98,29 @@ ul{
 .btn{
     width: 40px;
     height: 40px;
+    border-radius: 50%;
 }
 .btn2{
     width: 112px;
     height: 40px;
-    background-color:rgb(255, 255, 255);
+    background-color: #ccc;
     border: 3px solid black;
     padding: 5px;
     margin: 3px;
+    border-radius: 12px;
 }
+.btn3{
+    width: 70px;
+    height: 28px;
+    background-color:rgb(194, 194, 194);
+    padding-top: 0px;
+    margin: 3px;
+    border-radius: 12px;
+}
+.btn2:hover{
+    background: #fff;
+}
+.btn3:hover{
+    background: #fff;
+}
+
