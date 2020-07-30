@@ -21,6 +21,13 @@ window.addEventListener("load", () => {
     let bttn10 = document.querySelector("#button10");
     let bttn11 = document.querySelector("#button11");
     let bttn12 = document.querySelector("#button12");
+    let bttn13 = document.querySelector("#button13");
+    let bttn14 = document.querySelector("#button14");
+    let bttn15 = document.querySelector("#button15");
+    let bttn16 = document.querySelector("#button16");
+    let bttn17 = document.querySelector("#button17");
+    let bttn18 = document.querySelector("#button18");
+    let bttn19 = document.querySelector("#button19");
     let x = 10;
     let Cursori = "round"
     ctx.lineCap = Cursori;
@@ -42,32 +49,46 @@ window.addEventListener("load", () => {
         ctx.beginPath();
         ctx.moveTo(e.clientX, e.clientY);
     }
-    function change(cursorType){
-        cursor = cursorType;
-    }
+
+    
     //Eventlisteners
-    bttn1.addEventListener('click', () => ctx.strokeStyle ="black")
+    bttn1.addEventListener('click', () => ctx.strokeStyle ="#000000")
     bttn1.addEventListener('click', () => ctx.lineCap ="round")
-    bttn2.addEventListener('click', () => ctx.strokeStyle ="red")
+    bttn2.addEventListener('click', () => ctx.strokeStyle ="#ff0000")
     bttn2.addEventListener('click', () => ctx.lineCap ="round")
-    bttn3.addEventListener('click', () => ctx.strokeStyle ="green")
+    bttn3.addEventListener('click', () => ctx.strokeStyle ="#29a329")
     bttn3.addEventListener('click', () => ctx.lineCap ="round")
-    bttn4.addEventListener('click', () => ctx.strokeStyle ="blue")
+    bttn4.addEventListener('click', () => ctx.strokeStyle ="#009eff")
     bttn4.addEventListener('click', () => ctx.lineCap ="round")
-    bttn5.addEventListener('click', () => ctx.strokeStyle ="purple")
+    bttn5.addEventListener('click', () => ctx.strokeStyle ="#9800ff")
     bttn5.addEventListener('click', () => ctx.lineCap ="round")
-    bttn6.addEventListener('click', () => ctx.strokeStyle ="yellow")
+    bttn6.addEventListener('click', () => ctx.strokeStyle ="#ffff00")
     bttn6.addEventListener('click', () => ctx.lineCap ="round")
-    bttn7.addEventListener('click', () => ctx.strokeStyle ="orange")
+    bttn7.addEventListener('click', () => ctx.strokeStyle ="#ffd700")
     bttn7.addEventListener('click', () => ctx.lineCap ="round")
-    bttn8.addEventListener('click', () => ctx.strokeStyle ="pink")
+    bttn8.addEventListener('click', () => ctx.strokeStyle ="#ff00ff")
     bttn8.addEventListener('click', () => ctx.lineCap ="round")
-    bttn9.addEventListener('click', () => ctx.strokeStyle ="white")
-    bttn9.addEventListener('click', () => ctx.lineCap ="square")
-    bttn9.addEventListener('click', () => x = 30)
-    bttn10.addEventListener('click', () => x = 5)
-    bttn11.addEventListener('click', () => x = 10)
-    bttn12.addEventListener('click', () => x = 20)
+    bttn9.addEventListener('click', () => ctx.strokeStyle ="#b6ffff")
+    bttn9.addEventListener('click', () => ctx.lineCap ="round")
+    bttn10.addEventListener('click', () => ctx.strokeStyle ="#808080")
+    bttn10.addEventListener('click', () => ctx.lineCap ="round")
+    bttn11.addEventListener('click', () => ctx.strokeStyle ="#800000")
+    bttn11.addEventListener('click', () => ctx.lineCap ="round")
+    bttn12.addEventListener('click', () => ctx.strokeStyle ="#666633")
+    bttn12.addEventListener('click', () => ctx.lineCap ="round")
+    bttn13.addEventListener('click', () => ctx.strokeStyle ="#00ff00")
+    bttn13.addEventListener('click', () => ctx.lineCap ="round")
+    bttn14.addEventListener('click', () => ctx.strokeStyle ="#669999")
+    bttn14.addEventListener('click', () => ctx.lineCap ="round")
+    bttn15.addEventListener('click', () => ctx.strokeStyle ="#003399")
+    bttn15.addEventListener('click', () => ctx.lineCap ="round")
+    bttn16.addEventListener('click', () => ctx.strokeStyle ="#ffffff")
+    bttn16.addEventListener('click', () => ctx.lineCap ="square")
+    bttn16.addEventListener('click', () => x = 30)
+    bttn17.addEventListener('click', () => x = 5)
+    bttn18.addEventListener('click', () => x = 10)
+    bttn19.addEventListener('click', () => x = 20)
+
     canvas.addEventListener('mousedown', startPosition);
     canvas.addEventListener('mouseup', finishedPosition);
     canvas.addEventListener('mousemove', draw);

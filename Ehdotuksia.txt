@@ -2,8 +2,8 @@
 // chat 10 riviä näkyy yhyä aikaa
 // championin kuyvasta jos clikkaa niin voi vaihtaa sen skiniä
 // 3 eri pensseli kokoa (done)
-// vähintään 12 eri väriä 
-// pyyhekumi tehdään väri == kanvaan taustan väri
+// vähintään 12 eri väriä (done)
+// pyyhekumi tehdään väri == kanvaan taustan väri (done)
 // 150 eri championin nimeä (Aatrox,Ahri,Akali,Alistar,Amumu,Anivia,Annie,Aphelios,Ashe,Aurelion Sol,Azir,Bard,Blitzcrank,
 Brand,Braum,Caitlyn,Camille,Cassiopeia,Cho'Gath,Corki,Darius,Diana,Dr. Mundo,Draven,Ekko,Elise,Evelynn,Ezreal,Fiddlesticks,
 Fiora,Fizz,Galio,Gangplank,Garen,Gnar,Gragas,Graves,Hecarim,Heimerdinger,Illaoi,Irelia,Ivern,Janna,Jarvan IV,Jax,Jayce,Jhin,
