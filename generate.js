@@ -11,5 +11,6 @@ function generate() {
     var rand_Champion_name = Math.floor(Math.random()*Champion_name.length);
     var rand_Champion_name2 = Math.floor(Math.random()*Champion_name.length);
     var rand_Champion_name3 = Math.floor(Math.random()*Champion_name.length);
-    document.getElementById('results').innerHTML = "<h2>3 Champion Names :</h2><div class='alert alert-success'><h2>"+Champion_name[rand_Champion_name]+", "+Champion_name[rand_Champion_name2]+", "+Champion_name[rand_Champion_name3]+"</h2></div>";
+    document.getElementById('results').innerHTML = `<h2>3 Champion Names in buttons:</h2><div><button id=Champ_btn1 class=btn2>${Champion_name[rand_Champion_name]}</button></div><div><button id=Champ_btn2 class=btn2>${Champion_name[rand_Champion_name2]}</button></div><div><button id=Champ_btn3 class=btn2>${Champion_name[rand_Champion_name3]}</button></div>`;
+
 }
