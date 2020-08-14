@@ -143,4 +143,12 @@ li{
     margin: 3px;
     border-radius: 12px;
 }
+.champion_image{
+    width:600px;
+    height:445px;
+    padding-right: 5px;
+    border-radius: 12px;
+    
+}
+
 
