@@ -1,10 +1,16 @@
-window.addEventListener("load", () => {
-    const canvas = document.querySelector("#canvas");
-    const ctx = canvas.getContext("2d");
-
-    //resizing
-    canvas.height = window.innerHeight/100*98;
-    canvas.width = window.innerWidth/100*99;
+// wait for the content of the window element 
+// to load, then performs the operations. 
+// This is considered best practice. 
+window.addEventListener('load', ()=>{ 
+		
+	resize(); // Resizes the canvas once the window loads 
+	document.addEventListener('mousedown', startPainting); 
+	document.addEventListener('mouseup', stopPainting); 
+	document.addEventListener('mousemove', sketch); 
+	window.addEventListener('resize', resize); 
+}); 
+	
+const canvas = document.querySelector('#canvas'); 
 
 
     //variables 
@@ -27,71 +33,110 @@ window.addEventListener("load", () => {
     let bttn16 = document.querySelector("#button16");
     let bttn17 = document.querySelector("#button17");
     let bttn18 = document.querySelector("#button18");
-    let bttn19 = document.querySelector("#button19");
-    let x = 10;
-    let Cursori = "round"
-    ctx.lineCap = Cursori;
-
-    function startPosition(e){
-        painting = true;
-        draw(e);
-    }
-    function finishedPosition(){
-        painting = false;
-        ctx.beginPath();
-    }
-    function draw(e){
-        if(!painting) return;
-        ctx.lineWidth = x;
-
-        ctx.lineTo(e.clientX, e.clientY);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(e.clientX, e.clientY);
-    }
-
-    
-    //Eventlisteners
-    bttn1.addEventListener('click', () => ctx.strokeStyle ="#000000")
-    bttn1.addEventListener('click', () => ctx.lineCap ="round")
-    bttn2.addEventListener('click', () => ctx.strokeStyle ="#ff0000")
-    bttn2.addEventListener('click', () => ctx.lineCap ="round")
-    bttn3.addEventListener('click', () => ctx.strokeStyle ="#29a329")
-    bttn3.addEventListener('click', () => ctx.lineCap ="round")
-    bttn4.addEventListener('click', () => ctx.strokeStyle ="#009eff")
-    bttn4.addEventListener('click', () => ctx.lineCap ="round")
-    bttn5.addEventListener('click', () => ctx.strokeStyle ="#9800ff")
-    bttn5.addEventListener('click', () => ctx.lineCap ="round")
-    bttn6.addEventListener('click', () => ctx.strokeStyle ="#ffff00")
-    bttn6.addEventListener('click', () => ctx.lineCap ="round")
-    bttn7.addEventListener('click', () => ctx.strokeStyle ="#ffd700")
-    bttn7.addEventListener('click', () => ctx.lineCap ="round")
-    bttn8.addEventListener('click', () => ctx.strokeStyle ="#ff00ff")
-    bttn8.addEventListener('click', () => ctx.lineCap ="round")
-    bttn9.addEventListener('click', () => ctx.strokeStyle ="#b6ffff")
-    bttn9.addEventListener('click', () => ctx.lineCap ="round")
-    bttn10.addEventListener('click', () => ctx.strokeStyle ="#808080")
-    bttn10.addEventListener('click', () => ctx.lineCap ="round")
-    bttn11.addEventListener('click', () => ctx.strokeStyle ="#800000")
-    bttn11.addEventListener('click', () => ctx.lineCap ="round")
-    bttn12.addEventListener('click', () => ctx.strokeStyle ="#666633")
-    bttn12.addEventListener('click', () => ctx.lineCap ="round")
-    bttn13.addEventListener('click', () => ctx.strokeStyle ="#00ff00")
-    bttn13.addEventListener('click', () => ctx.lineCap ="round")
-    bttn14.addEventListener('click', () => ctx.strokeStyle ="#669999")
-    bttn14.addEventListener('click', () => ctx.lineCap ="round")
-    bttn15.addEventListener('click', () => ctx.strokeStyle ="#003399")
-    bttn15.addEventListener('click', () => ctx.lineCap ="round")
-    bttn16.addEventListener('click', () => ctx.strokeStyle ="#ffffff")
-    bttn16.addEventListener('click', () => ctx.lineCap ="square")
-    bttn16.addEventListener('click', () => x = 30)
-    bttn17.addEventListener('click', () => x = 5)
-    bttn18.addEventListener('click', () => x = 10)
-    bttn19.addEventListener('click', () => x = 20)
-
-    canvas.addEventListener('mousedown', startPosition);
-    canvas.addEventListener('mouseup', finishedPosition);
-    canvas.addEventListener('mousemove', draw);
+	let bttn19 = document.querySelector("#button19");
+    let size = 5;
+	
+	//Eventlisteners
+bttn1.addEventListener('click', () => ctx.strokeStyle = 'black')
+bttn1.addEventListener('click', () => ctx.lineCap = 'round')
+bttn2.addEventListener('click', () => ctx.strokeStyle = '#ff0000')
+bttn2.addEventListener('click', () => ctx.lineCap = 'round')
+bttn3.addEventListener('click', () => ctx.strokeStyle = '#29a329')
+bttn3.addEventListener('click', () => ctx.lineCap = 'round')
+bttn4.addEventListener('click', () => ctx.strokeStyle = '#009eff')
+bttn4.addEventListener('click', () => ctx.lineCap = 'round')
+bttn5.addEventListener('click', () => ctx.strokeStyle = '#9800ff')
+bttn5.addEventListener('click', () => ctx.lineCap = 'round')
+bttn6.addEventListener('click', () => ctx.strokeStyle = '#ffff00')
+bttn6.addEventListener('click', () => ctx.lineCap = 'round')
+bttn7.addEventListener('click', () => ctx.strokeStyle = '#ffd700')
+bttn7.addEventListener('click', () => ctx.lineCap = 'round')
+bttn8.addEventListener('click', () => ctx.strokeStyle = '#ff00ff')
+bttn8.addEventListener('click', () => ctx.lineCap = 'round')
+bttn9.addEventListener('click', () => ctx.strokeStyle = '#b6ffff')
+bttn9.addEventListener('click', () => ctx.lineCap = 'round')
+bttn10.addEventListener('click', () => ctx.strokeStyle = '#808080')
+bttn10.addEventListener('click', () => ctx.lineCap = 'round')
+bttn11.addEventListener('click', () => ctx.strokeStyle = '#800000')
+bttn11.addEventListener('click', () => ctx.lineCap = 'round')
+bttn12.addEventListener('click', () => ctx.strokeStyle = '#666633')
+bttn12.addEventListener('click', () => ctx.lineCap = 'round')
+bttn13.addEventListener('click', () => ctx.strokeStyle = '#00ff00')
+bttn13.addEventListener('click', () => ctx.lineCap = 'round')
+bttn14.addEventListener('click', () => ctx.strokeStyle = '#669999')
+bttn14.addEventListener('click', () => ctx.lineCap = 'round')
+bttn15.addEventListener('click', () => ctx.strokeStyle = '#003399')
+bttn15.addEventListener('click', () => ctx.lineCap = 'round')
+bttn16.addEventListener('click', () => ctx.strokeStyle = '#ffffff')
+bttn16.addEventListener('click', () => ctx.lineCap = 'square')
+bttn16.addEventListener('click', () => size = 30)
+bttn17.addEventListener('click', () => size = 5)
+bttn18.addEventListener('click', () => size = 10)
+bttn19.addEventListener('click', () => size = 20)
 
 
-});
+
+	
+
+// Context for the canvas for 2 dimensional operations 
+const ctx = canvas.getContext('2d'); 
+
+// Resizes the canvas to the available size of the window. 
+function resize(){ 
+ctx.canvas.width = window.innerWidth ; 
+ctx.canvas.height = window.innerHeight ; 
+} 
+	
+// Stores the initial position of the cursor 
+let coord = {x:0 , y:0}; 
+
+// This is the flag that we are going to use to 
+// trigger drawing 
+let paint = false; 
+	
+// Updates the coordianates of the cursor when 
+// an event e is triggered to the coordinates where 
+// the said event is triggered. 
+function getPosition(event){ 
+coord.x = event.clientX - canvas.offsetLeft; 
+coord.y = event.clientY - canvas.offsetTop; 
+} 
+
+// The following functions toggle the flag to start 
+// and stop drawing 
+function startPainting(event){ 
+paint = true; 
+getPosition(event); 
+} 
+function stopPainting(){ 
+paint = false; 
+} 
+	
+function sketch(event){ 
+if (!paint) return; 
+ctx.beginPath(); 
+	
+ctx.lineWidth = size; 
+
+// Sets the end of the lines drawn 
+// to a round shape. 
+ctx.lineCap = 'round';
+	
+	
+// The cursor to start drawing 
+// moves to this coordinate 
+ctx.moveTo(coord.x, coord.y); 
+
+// The position of the cursor 
+// gets updated as we move the 
+// mouse around. 
+getPosition(event); 
+
+// A line is traced from start 
+// coordinate to this coordinate 
+ctx.lineTo(coord.x , coord.y); 
+	
+// Draws the line. 
+ctx.stroke(); 
+} 
+

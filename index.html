@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>
+        League Drawing game
+    </title>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row"">
+        <div class="col">
+            <h1>Lol Drawing game</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3" style="border: 5px solid green;">
+            <h1>CHAT</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, quae dicta iste deserunt minima delectus quisquam nemo perferendis reprehenderit dolorem, in voluptate officiis similique placeat ad impedit incidunt quibusdam. Aliquam voluptatem aut quis non iste dolor nesciunt aperiam, dolores ipsam nemo iure eveniet quidem, corporis laboriosam distinctio reprehenderit sunt sed.</p>
+        </div>
+        <div class="col-6" style="border: 5px solid aqua;">
+            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" style="width:600px;height:400px;" id="skin"/>
+            <div class="champion-buttons">
+                <button type="button" class="btn btn-dark p-3" onclick='generate()'>Click to generate new champion names</button>
+                <button class="btn btn-dark p-3" id="results0" onclick='newPic(0)'>champ0</button>
+                <button class="btn btn-dark p-3" id="results1" onclick='newPic(1)'>champ1</button>
+                <button class="btn btn-dark p-3" id="results2" onclick='newPic(2)'>champ2</button>
+            </div>
+         </div>
+
+         <div class="col-3"style="border: 5px solid red;">
+            <h1>Pallet</h1>
+            <button type="button" id=button1 class="My-btn" style="background-color:rgb(0, 0, 0);"></button>
+            <button type="button" id=button2 class="My-btn" style="background-color: #ff0000;"></button>
+            <button type="button" id=button3 class="My-btn" style="background-color:#29a329;"></button>
+            <button type="button" id=button4 class="My-btn" style="background-color:#009eff;"></button>
+            <button type="button" id=button5 class="My-btn" style="background-color:#9800ff;"></button>
+            <button type="button" id=button6 class="My-btn" style="background-color:#ffff00;"></button>
+            <button type="button" id=button7 class="My-btn" style="background-color:#ffd700;"></button>
+            <button type="button" id=button8 class="My-btn" style="background-color:#ff00ff;"></button>
+            <button type="button" id=button9 class="My-btn" style="background-color:#b6ffff;"></button>
+            <button type="button" id=button10 class="My-btn" style="background-color:#808080;"></button>
+            <button type="button" id=button11 class="My-btn" style="background-color:#800000;"></button>
+            <button type="button" id=button12 class="My-btn" style="background-color:#666633;"></button>
+            <button type="button" id=button13 class="My-btn" style="background-color:#00ff00;"></button>
+            <button type="button" id=button14 class="My-btn" style="background-color:#669999;"></button>
+            <button type="button" id=button15 class="My-btn" style="background-color:#003399;"></button>
+            <button type="button" id=button16 class="My-btn" style="background-color:#ffffff;"></button>
+        
+            <br>
+            <h1>Cursor size</h1>
+            <br>
+            <button type="button" id=button17  class="btn btn-dark">Small</button>
+            <button type="button" id=button18 class="btn btn-dark">Medium</button>
+            <button type="button" id=button19 class="btn btn-dark">Large</button>
+            <br>
+            <h1>Clear Canvas</h1>
+
+
+        </div>
+            <canvas id="canvas" class="img-responsive" style="border: 5px solid purple;"></canvas>
+    </div>   
+</div>
+
+<script src="canvas.js"></script>
+</body>
+
+</html>
